@@ -2,11 +2,11 @@
 const { Buffer } = require('buffer');
 const crypto = require('crypto');
 
+require('dotenv').config();
 
-
-
+const pb = process.env.PUB_KEY 
 const encryptData = async (data) => {
-  const publicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqzA5Wh9ukNwPqWh/8cKjsrx7oAo9Ag1L/Cpz3INt34OSgk+ySXP9tz5FL+I4pGW045QrJk2rpkzExTkxcMbHV7YvvwnbFbHC10QjGFmFSEqx+8nsSFrgxpCiYPbnSs6nzL0+Jqe7+SmQLToRrnSy2Qm68WBxJP3wFst+pdkrT2IZ/PawS1W8/2o0SPPO22pgdQddGts86gkcDAF+Qrls7cl+vPiUjGmv0HfBnV/RR0KnhYdFYBNrfswfSoh9w0bWOkL+hhnYLwk1UfeAe/a1jNkVCGgKqHZKJdjSzm66mEF6IqqrPmpjTb85vT1YyefNd+Y2E5pvvlYU2COnZ+5hIQIDAQAB".replaceAll('\\n', '\n');
+  const publicKey = pb.replaceAll('\\n', '\n');
   try {
     const rsaPublicKey = await importPublicKey(publicKey);
     const symmetricKey = await generateSymmetricKey();

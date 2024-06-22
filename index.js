@@ -11,6 +11,7 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.post('/encrypt', async (req, res) => {
+
   try {
     const { dataToEncrypt } = req.body;
     if (!dataToEncrypt) {
