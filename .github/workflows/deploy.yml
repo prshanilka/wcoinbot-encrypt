@@ -35,5 +35,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "rameshshani-wcoinw"
-          entrypoint: "/"
+          entrypoint: "index.js"
           root: ""
